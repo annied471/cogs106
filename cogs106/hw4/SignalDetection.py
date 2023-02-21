@@ -1,6 +1,4 @@
 import unittest
-# import numpy as np // redundant
-# import matplotlib.pyplot as plt // redundant
 import scipy.stats
 
 
@@ -18,5 +16,4 @@ class SignalDetection:
         return scipy.stats.norm.ppf(self.hitrate()) - scipy.stats.norm.ppf(self.farate())
     def criterion(self):
         return  -0.5 * (scipy.stats.norm.ppf(self.hitrate()) + scipy.stats.norm.ppf(self.farate()))
-# pass // redundant
 
