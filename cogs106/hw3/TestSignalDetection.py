@@ -1,6 +1,4 @@
 import unittest
-import numpy as np
-import matplotlib.pyplot as plt
 from SignalDetection import SignalDetection
 
 class TestSignalDetection(unittest.TestCase):
@@ -31,7 +29,7 @@ class TestSignalDetection(unittest.TestCase):
         # Compare calculated and expected criterion
         self.assertAlmostEqual(obtained, expected, places=6)
 
-         # additional tests for operator overloading for hw3
+    # additional tests for operator overloading for hw3
     def test_addition(self):
         sd = SignalDetection(1, 1, 2, 1) + SignalDetection(2, 1, 1, 3)
         expected = SignalDetection(3, 2, 3, 4).criterion()
