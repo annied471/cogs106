@@ -31,5 +31,20 @@ class TestSignalDetection(unittest.TestCase):
         # Compare calculated and expected criterion
         self.assertAlmostEqual(obtained, expected, places=6)
 
+         # additional tests for operator overloading for hw3
+    def test_addition(self):
+        sd = SignalDetection(1, 1, 2, 1) + SignalDetection(2, 1, 1, 3)
+        expected = SignalDetection(3, 2, 3, 4).criterion()
+        obtained = sd.criterion()
+        # Compare calculated and expected criterion
+        self.assertEqual(obtained, expected)
+
+    def test_multiplication(self):
+        sd = SignalDetection(1, 2, 3, 1) * 4
+        expected = SignalDetection(4, 8, 12, 4).criterion()
+        obtained = sd.criterion()
+        # Compare calculated and expected criterion
+        self.assertEqual(obtained, expected)
+        
 if __name__ == '__main__':
     unittest.main()
