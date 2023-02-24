@@ -62,6 +62,7 @@ class TestSignalDetection(unittest.TestCase):
     def test_corruption(self):
         sd = SignalDetection(1, 1, 2, 1)
         sd_dp = sd.d_prime()
-        sd_hr = sd.hitrate() + 0.1        
+        sd_hr = sd.hitrate() + 0.1 
+
 if __name__ == '__main__':
     unittest.main()
