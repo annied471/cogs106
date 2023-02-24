@@ -3,7 +3,7 @@ import scipy.stats
 
 
 class SignalDetection: 
-    def __init__ (self, hits, misses, falseAlarms, correctRejections):
+    def __init__ (self, hits = 0, misses = 0, falseAlarms = 0, correctRejections = 0):
         self.hits = hits
         self.misses = misses 
         self.falseAlarms = falseAlarms

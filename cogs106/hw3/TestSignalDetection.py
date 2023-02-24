@@ -45,6 +45,23 @@ class TestSignalDetection(unittest.TestCase):
         obtained = sd.criterion()
         # Compare calculated and expected criterion
         self.assertEqual(obtained, expected)
+
+    # tests for corrupted code
+    def test_externalmutation(self):
+        sd = SignalDetection(1, 1, 2, 1)
+        sd.hits = 2
+        sd.misses = 3
+        sd.falseAlarms = 4
+        sd.correctRejections = 5
+        print(sd.hits)
+        expected = SignalDetection(2, 3, 4, 5).criterion()
+        obtained = sd.criterion()
+        # Compare calculated and expected criterion
+        self.assertEqual(obtained, expected)
         
+    def test_corruption(self):
+        sd = SignalDetection(1, 1, 2, 1)
+        sd_dp = sd.d_prime()
+        sd_hr = sd.hitrate() + 0.1        
 if __name__ == '__main__':
     unittest.main()
