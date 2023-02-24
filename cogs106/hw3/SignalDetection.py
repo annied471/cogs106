@@ -35,8 +35,8 @@ class SignalDetection:
     
     # plot ROC curve
     def plot_roc(self):
-        plt.plot([0, self.farate(), 1], [0, self.hitrate(), 1], color ='red', marker ='o', markersize = 10, label ='ROC')
-        plt.plot([0, 1], [0, 1], color='darkblue', linestyle='--', label ="Chance Line")
+        plt.plot([0, self.farate(), 1], [0, self.hitrate(), 1], color ='red', marker ='o', markersize = 5, label ='ROC')
+        plt.plot([0, 1], [0, 1], color='darkblue', linestyle='--', label ="Baseline/Random")
         plt.xlabel('False Alarm Rate')
         plt.ylabel('Hit Rate')
         plt.title('Receiver Operating Characteristic (ROC) Curve')
