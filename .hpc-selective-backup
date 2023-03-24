@@ -1,0 +1,22 @@
+#######################################################################################
+#######################################################################################
+##                       HPC Selective Backup Configuration File                     ##
+##                             For details, please visit:                            ##
+##                      https://hpc.oit.uci.edu/selective-backup                     ##
+#######################################################################################
+#######################################################################################
+#
+# UN-comment any 'HPC_' line below to select that option.
+# HPC_SEND_EMAIL_SUMMARY   # Send me daily rsync backup email summaries.
+# HPC_SEND_EMAIL_ON_ERROR  # Send me email ONLY if rsync backup encounters error(s).
+# HPC_KEEP_DELETED=14      # Keep up to X days deleted files on backup server.
+#
+# Your rsync EXCLUDE file is located at:
+#      /data/class/cogs106/annied7/.hpc-selective-backup-exclude
+#
+# Specify directories or files to backup, one per line.  All paths must begin
+# with root forward slash "/".   The order is important as the saves are
+# processed in the sequence you specify below one at a time.
+#
+/data/class/cogs106/annied7
+/pub/annied7
