@@ -22,10 +22,11 @@ class Metropolis:
                     acceptances += 1
                     self.initialState = proposal
             acceptanceRate = acceptances / length
+            # adjustments based on the multiplicative factor
             if acceptanceRate > 0.4:
-                self.scale *= 1.01
+                self.scale *= (acceptanceRate / 0.4) ** 0.1
             else:
-                self.scale *= 0.99
+                self.scale /= (0.4 / acceptanceRate) ** 0.1
         return self
 
     def sample(self, nSamples):
